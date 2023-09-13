@@ -180,6 +180,10 @@ class mainTest(TestCase):
         self.assertContains(response, 50000) 
         self.assertContains(response, 'fashion pria')
 ```
+**Penjelasan Kode:**
+* `test_main_url_is_exist` adalah untuk mengecek apakah *path* `/main/` bisa diakses.
+* `test_main_using_main_template` adalah untuk mengecek halaman `/main/` me *render* dengan *template* `main.html`.
+* `test_item_details` adalah untuk mengecek kesesuaian isi dari variabel yang sudah dibuat.
 2. Jalankan dengan perintah `python manage.py test`. Jika berhasil maka akan keluar seperti berikut.
 ```txt
 Found 3 test(s).
@@ -351,7 +355,7 @@ GitHub.sublime-settings
 7. Centang bagian `HTTP Listener on PORT` dan klik `Deploy App` untuk memulai *Deployment*
 
 ## **Bagan *request* dan *response client* dengan Django**
-![alt-text](Images/bagan request and response client.png)
+![Bagan](Images/bagan_request_and_response_client.png)
 
 * *User* mengakses website dan melakukan *HTTP request*.
 * *Request* yang masuk akan diterima `urls.py` dan akan melakukan proses pencarian terhadap *pattern* url yang sesuai.
