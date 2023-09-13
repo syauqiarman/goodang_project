@@ -93,8 +93,11 @@ from django.shortcuts import render
 
 def show_main(request):
     context = {
-        'name': 'Syauqi Armanaya Syaki',
-        'class': 'PBP D'
+        'name' : 'Kaos hitam polos',
+        'amount': 20,
+        'description':'Kaos polos pria berbahan Cotton Combed 30s round neck reguler fit',
+        'price': 50000,
+        'category': 'fashion pria'
     }
 
     return render(request, "main.html", context)
@@ -108,12 +111,21 @@ def show_main(request):
 ## **Memodifikasi template**
 1. Buka file `main.html` yang sudah dibuat sebelumnya, dan isi dengan data yang akan kamu gunakan, contohnya:
 ```html
-<h1>Page</h1>
+<h1>Goodang Page</h1>
 
+<h5>Name: Syauqi Armanaya Syaki</h5>
+<h5>Class: PBP D</h5>
+<h5>ITEM: </h5>
 <h5>Name: </h5>
-<p>{{ name }}</p> 
-<h5>Class: </h5>
-<p>{{ class }}</p> 
+<p>{{ name }}</p> <!-- Ubahlah sesuai dengan nama produk -->
+<h5>Amount: </h5>
+<p>{{ amount }}</p> <!-- Ubahlah sesuai dengan jumlah produk -->
+<h5>Description: </h5>
+<p>{{ description }}</p> <!-- Ubahlah sesuai dengan deskripsi produk -->
+<h5>Price: </h5>
+<p>{{ price }}</p> <!-- Ubahlah sesuai dengan harga produk -->
+<h5>Category: </h5>
+<p>{{ category }}</p> <!-- Ubahlah sesuai dengan harga produk -->
 ```
 **Penjelasan Kode:**
 * sintaks `{{}}` digunakan untuk menampilkan data yang telah didefinisikan di `context`.
@@ -159,15 +171,23 @@ class mainTest(TestCase):
     def test_main_using_main_template(self):
         response = Client().get('/main/')
         self.assertTemplateUsed(response, 'main.html')
+    
+    def test_item_details(self):
+        response = Client().get('/main/')
+        self.assertContains(response, 'Kaos hitam polos')
+        self.assertContains(response, 20) 
+        self.assertContains(response, 'Kaos polos pria berbahan Cotton Combed 30s round neck reguler fit') 
+        self.assertContains(response, 50000) 
+        self.assertContains(response, 'fashion pria')
 ```
 2. Jalankan dengan perintah `python manage.py test`. Jika berhasil maka akan keluar seperti berikut.
 ```txt
-Found 2 test(s).
+Found 3 test(s).
 Creating test database for alias 'default'...
 System check identified no issues (0 silenced).
-..
+...
 ----------------------------------------------------------------------
-Ran 2 tests in 0.016s
+Ran 3 tests in 0.025s
 
 OK
 Destroying test database for alias 'default'...
@@ -331,7 +351,7 @@ GitHub.sublime-settings
 7. Centang bagian `HTTP Listener on PORT` dan klik `Deploy App` untuk memulai *Deployment*
 
 ## **Bagan *request* dan *response client* dengan Django**
-![bagan](https://drive.google.com/file/d/1iYKf2lR0CB86So6hSFwtE5ru0nf_MRrB/view?usp=sharing)
+![alt-text](images/bagan request and response client.png)
 
 * *User* mengakses website dan melakukan *HTTP request*.
 * *Request* yang masuk akan diterima `urls.py` dan akan melakukan proses pencarian terhadap *pattern* url yang sesuai.
