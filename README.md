@@ -355,7 +355,8 @@ GitHub.sublime-settings
 7. Centang bagian `HTTP Listener on PORT` dan klik `Deploy App` untuk memulai *Deployment*
 
 ## **Bagan *request* dan *response client* dengan Django**
-![Bagan](Images/bagan_request_and_response_client.png)
+![bagan_request_and_response_client](https://github.com/syauqiarman/goodang_project/assets/113775175/73017ae4-0758-4186-99dc-b888398592dc)
+
 
 * *User* mengakses website dan melakukan *HTTP request*.
 * *Request* yang masuk akan diterima `urls.py` dan akan melakukan proses pencarian terhadap *pattern* url yang sesuai.
