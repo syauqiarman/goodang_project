@@ -2,9 +2,9 @@
 
 **Tugas 2 - Pemrograman Berbasis Platform**
 
-**Syauqi Armanaya Syaki**
-**2206829010**
-**PBP D**
+**Syauqi Armanaya Syaki**<br/>
+**2206829010**<br/>
+**PBP D**<br/>
 
 Dapat diakses melalui link [Goodang](https://goodang.adaptable.app/main/).
 
@@ -20,7 +20,7 @@ BONUS.... Kamu akan mendapatkan nilai bonus pada penilaian tugas ini apabila kam
 2. Buat *virtual environment* untuk mengisolasi proyek kita dengan perintah `python -m venv env`.
 3. Aktifkan *virtual environment* dengan cara `env\Scripts\activate.bat` untuk Windows dan `source env/bin/activate` untuk Unix (Mac/Linux).
 
->[!Pastikan *virtual environment sudah aktif yang ditandai dengan `(env)` di baris input terminal]
+**NOTE:** Pastikan *virtual environment* sudah aktif yang ditandai dengan `(env)` di baris input terminal
 
 4. Buat file txt dengan nama `requirements.txt` di dalam direktori yang sama dan tambahkan beberapa *dependencies* ke dalamnya.
 ```txt
@@ -34,7 +34,7 @@ urllib3
 5. Install *dependencies* yang sudah dimasukkan ke `requirements.txt` dengan menjalankan perintah `pip install -r requirements.txt`.
 6. Buat proyek Django dengan nama yang diinginkan (saya menggunakan nama `goodang`) dengan perintah berikut. `django-admin startproject goodang .`
 
->[!Pastikan karakter `.` ditulis di akhir perintah]
+**NOTE:** Pastikan karakter `.` ditulis di akhir perintah
 
 7. Buka `settings.py` lalu dibagian `ALLOWED_HOSTS` tambahkan `*` agar aplikasi dapat diakses semua host.
 ```python
@@ -332,6 +332,13 @@ GitHub.sublime-settings
 
 ## **Bagan *request* dan *response client* dengan Django**
 ![bagan](https://drive.google.com/file/d/1iYKf2lR0CB86So6hSFwtE5ru0nf_MRrB/view?usp=sharing)
+
+* *User* mengakses website dan melakukan *HTTP request*.
+* *Request* yang masuk akan diterima `urls.py` dan akan melakukan proses pencarian terhadap *pattern* url yang sesuai.
+* Setelah menemukan yang sesuai, Django akan memanggil fungsi yang sesuai pada `views.py`, disini akan dilakukan *logic handling* dimana database dapat diakses dan diproses yang diambil dari `models.py`.
+* `models.py` berfungsi sebagai file yang membuat dan mengatur data yang akan disimpan di database.
+* *Database* adalah tempat dimana data aplikasi disimpan, dimana data disini dapat diubah sengan perintah dari `models.py`.
+* *Template* disini berfungsi untuk mengatur tampilan halaman web yang akan dikembalikan ke *user*. Setelahnya maka akan dikembalikan ke user dalam bentuk *HTTP response (HTML)*.
 
 ## **Mengapa menggunakan *virtual environment*? Bagaimana jika tidak menggunakannya?**
 Dengan menggunakan *virtual environment* maka sistem dapat bekerja di ruang yang terisolasi agar proyek yang kita kerjakan tidak berkonflik dengan proyek lain, karena setiap proyek memiliki kebutuhan atau dependensi yang berbeda. Dengan mengaktifkan *virtual environment* maka akan terdapat pembatas atau sekat yang dapat mencegah konflik tersebut.
