@@ -543,7 +543,7 @@ Meskipun memiliki beberapa perbedaan, terkadang kita bisa saja membutuhkan kedua
             context = {
                 'name': 'Syauqi Armanaya Syaki', # Nama kamu
                 'class': 'PBP D', # Kelas PBP kamu
-                'item': items
+                'items': items
             }
 
             return render(request, "main.html", context)
@@ -626,7 +626,7 @@ Meskipun memiliki beberapa perbedaan, terkadang kita bisa saja membutuhkan kedua
         context = {
             'name': 'Syauqi Armanaya Syaki', # Nama kamu
             'class': 'PBP D', # Kelas PBP kamu
-            'item': items
+            'items': items
         }
 
         return render(request, "main.html", context)
@@ -653,8 +653,8 @@ Meskipun memiliki beberapa perbedaan, terkadang kita bisa saja membutuhkan kedua
     def show_xml_by_id(request, id):
         data = Item.objects.filter(pk=id)
         return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
-        ```
-5. Buat fungsi dengan nama `shows_json_by_id` di `views.py` yang menerima parameter *request* dan *id* untuk mengembalikan data ID tertentu dalam bentuk JSON dengan kode berikut.
+    ```
+6. Buat fungsi dengan nama `shows_json_by_id` di `views.py` yang menerima parameter *request* dan *id* untuk mengembalikan data ID tertentu dalam bentuk JSON dengan kode berikut.
     ```python
     def show_json_by_id(request, id):
         data = Item.objects.filter(pk=id)
@@ -682,16 +682,33 @@ urlpatterns = [
 
 ## **Menambahkan pesan "Kamu menyimpan X item pada aplikasi ini"**
 Buka `main.html` pada direktori `main/templates`, lalu tambahkan kode yang mengambil *length* dari `items` seperti berikut tepat diatas tabel yang dibuat seperti berikut.
-    ```html
-    ...
-    <h5>Class:</h5>
-        <p>{{class}}</p>
-        
-        <p>Total of Items: {{items|length}}</p>
-        <table>
-            <tr>
-                <th>Owner</th>
-                <th>Item Name</th>
-                ...
-    ```
+```html
+...
+<h5>Class:</h5>
+    <p>{{class}}</p>
+    
+    <p>Total of Items: {{items|length}}</p>
+    <table>
+        <tr>
+            <th>Owner</th>
+            <th>Item Name</th>
+            ...
+```
+
+## **Pengaksesan kelima URL di poin 2 menggunakan Postman**
+1. Jalankan *virtual environment* terlebih dahulu. Untuk Windows jalankan `env\Scripts\activate.bat` dan untuk Unix(Mac/Linux) jalankan `source env/bin/activate`.
+2. Jalankan server dengan perintah `python manage.py runserver`.
+3. Buka Postman dan buat *request* baru dengan method `GET`, lalu isi dengan *url* berikut.
+   * HTML (http://localhost:8000)
+     ![image](https://github.com/syauqiarman/goodang_project/assets/113775175/2fb72eb3-5fa2-4e83-925c-dc8a40967eac)
+   * XML (http://localhost:8000/xml)
+     ![image](https://github.com/syauqiarman/goodang_project/assets/113775175/1e3f1a0f-116c-4c69-8e91-4f1f04fa775f)
+   * JSON (http://localhost:8000/json)
+     ![image](https://github.com/syauqiarman/goodang_project/assets/113775175/c79eecef-eb87-4fc1-9e9c-9b8aa711b762)
+   * XML by ID (http://localhost:8000/xml/[id])
+     ![image](https://github.com/syauqiarman/goodang_project/assets/113775175/998b326b-50ad-4c3a-8356-3862ee864b9d)
+   * JSON by ID (http://localhost:8000/json/[id])
+     ![image](https://github.com/syauqiarman/goodang_project/assets/113775175/37528e34-9ceb-4b76-9753-78f052050a4c)
+
+
 
