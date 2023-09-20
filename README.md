@@ -513,7 +513,7 @@ Meskipun memiliki beberapa perbedaan, terkadang kita bisa saja membutuhkan kedua
         class ItemForm(ModelForm):
             class Meta:
                 model = Item
-                fields = ["name", "category", "amount", "price", "description"]
+                fields = ["owner", "item_name", "category", "amount", "price", "description"]
         ```
     * Pada folder `main`, buka berkas `views.py` dan tambahkan beberapa *import*, lalu buat fungsi baru dengan nama `create_item` dengan parameter `request` agar formulir dapat menambahkan data item secara otomatis setelah di *submit*.
         ```python
@@ -538,12 +538,12 @@ Meskipun memiliki beberapa perbedaan, terkadang kita bisa saja membutuhkan kedua
     * Modifikasi fungsi `show_main` yang ada pada `views.py` menjadi seperti berikut.
         ```python
         def show_main(request):
-            item = Item.objects.all()
+            items = Item.objects.all()
 
             context = {
                 'name': 'Syauqi Armanaya Syaki', # Nama kamu
                 'class': 'PBP D', # Kelas PBP kamu
-                'item': item
+                'item': items
             }
 
             return render(request, "main.html", context)
@@ -582,7 +582,8 @@ Meskipun memiliki beberapa perbedaan, terkadang kita bisa saja membutuhkan kedua
         ```html
         <table>
             <tr>
-                <th>Name</th>
+                <th>Owner</th>
+                <th>Item Name</th>
                 <th>Category</th>
                 <th>Amount</th>
                 <th>Price</th>
@@ -594,7 +595,8 @@ Meskipun memiliki beberapa perbedaan, terkadang kita bisa saja membutuhkan kedua
 
             {% for item in items %}
                 <tr>
-                    <td>{{item.name}}</td>
+                    <td>{{item.owner}}</td>
+                    <td>{{item.item_name}}</td>
                     <td>{{item.category}}</td>
                     <td>{{item.amount}}</td>
                     <td>{{item.price}}</td>
@@ -619,12 +621,12 @@ Meskipun memiliki beberapa perbedaan, terkadang kita bisa saja membutuhkan kedua
 1. Ubah fungsi `show_main` pada `main/views.py` untuk melihat informasi yang tertera dari hasil *render* HTML.
     ```python
     def show_main(request):
-        item = Item.objects.all()
+        items = Item.objects.all()
 
         context = {
             'name': 'Syauqi Armanaya Syaki', # Nama kamu
             'class': 'PBP D', # Kelas PBP kamu
-            'item': item
+            'item': items
         }
 
         return render(request, "main.html", context)
@@ -677,3 +679,19 @@ urlpatterns = [
     path('json/<int:id>/', show_json_by_id, name='show_json_by_id'),
 ]
 ```
+
+## **Menambahkan pesan "Kamu menyimpan X item pada aplikasi ini"**
+Buka `main.html` pada direktori `main/templates`, lalu tambahkan kode yang mengambil *length* dari `items` seperti berikut tepat diatas tabel yang dibuat seperti berikut.
+    ```html
+    ...
+    <h5>Class:</h5>
+        <p>{{class}}</p>
+        
+        <p>Total of Items: {{items|length}}</p>
+        <table>
+            <tr>
+                <th>Owner</th>
+                <th>Item Name</th>
+                ...
+    ```
+

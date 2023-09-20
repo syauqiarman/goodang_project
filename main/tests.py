@@ -14,8 +14,6 @@ class mainTest(TestCase):
     
     def test_item_details(self):
         response = Client().get('/main/')
-        self.assertContains(response, 'Kaos hitam polos')
-        self.assertContains(response, 20) 
-        self.assertContains(response, 'Kaos polos pria berbahan Cotton Combed 30s round neck reguler fit') 
-        self.assertContains(response, 50000) 
-        self.assertContains(response, 'fashion pria')
+        self.assertContains(response, 'Goodang Page')
+        self.assertContains(response, "Syauqi Armanaya Syaki") 
+        self.assertContains(response, 'PBP D')

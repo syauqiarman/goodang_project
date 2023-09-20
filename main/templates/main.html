@@ -9,9 +9,11 @@
     <h5>Class:</h5>
     <p>{{class}}</p>
     
+    <p>Total of Items: {{items|length}}</p>
     <table>
         <tr>
-            <th>Name</th>
+            <th>Owner</th>
+            <th>Item Name</th>
             <th>Category</th>
             <th>Amount</th>
             <th>Price</th>
@@ -23,7 +25,8 @@
 
         {% for item in items %}
             <tr>
-                <td>{{item.name}}</td>
+                <td>{{item.owner}}</td>
+                <td>{{item.item_name}}</td>
                 <td>{{item.category}}</td>
                 <td>{{item.amount}}</td>
                 <td>{{item.price}}</td>
