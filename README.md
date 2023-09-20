@@ -653,8 +653,8 @@ Meskipun memiliki beberapa perbedaan, terkadang kita bisa saja membutuhkan kedua
     def show_xml_by_id(request, id):
         data = Item.objects.filter(pk=id)
         return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
-        ```
-5. Buat fungsi dengan nama `shows_json_by_id` di `views.py` yang menerima parameter *request* dan *id* untuk mengembalikan data ID tertentu dalam bentuk JSON dengan kode berikut.
+    ```
+6. Buat fungsi dengan nama `shows_json_by_id` di `views.py` yang menerima parameter *request* dan *id* untuk mengembalikan data ID tertentu dalam bentuk JSON dengan kode berikut.
     ```python
     def show_json_by_id(request, id):
         data = Item.objects.filter(pk=id)
@@ -682,16 +682,16 @@ urlpatterns = [
 
 ## **Menambahkan pesan "Kamu menyimpan X item pada aplikasi ini"**
 Buka `main.html` pada direktori `main/templates`, lalu tambahkan kode yang mengambil *length* dari `items` seperti berikut tepat diatas tabel yang dibuat seperti berikut.
-    ```html
-    ...
-    <h5>Class:</h5>
-        <p>{{class}}</p>
-        
-        <p>Total of Items: {{items|length}}</p>
-        <table>
-            <tr>
-                <th>Owner</th>
-                <th>Item Name</th>
-                ...
-    ```
+```html
+...
+<h5>Class:</h5>
+    <p>{{class}}</p>
+    
+    <p>Total of Items: {{items|length}}</p>
+    <table>
+        <tr>
+            <th>Owner</th>
+            <th>Item Name</th>
+            ...
+```
 
