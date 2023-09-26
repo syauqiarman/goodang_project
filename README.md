@@ -1076,3 +1076,74 @@ Dalam penggunaan *cookies*, penting untuk berhati-hati dan bijaksana dalam menge
     ```
 
 3. Untuk melihat *cookie* `last_login`, akses fitur *inspect element* pada *web* dan buka bagian *Application/Storage*, akan ada bagian *Cookies* yang berisi data seperti `last_login`, `sessionid`, dan `csrftoken`. Saat kamu melakukan *logout* maka *cookie* sebelumnya akan hilang dan dibuat ulang saat *login* kembali.
+
+## **Bonus Implementasi untuk Menambahkan, Mengurangkan, dan Menghapus Item**
+
+1. Buka `views.py` yang ada di direktori main.
+    * Buat fungsi `add_items` untuk menambahkan *item* yang ada dengan kode seperti berikut.
+        ```python
+        def add_items(request, id):
+            if request.method == "POST":
+                item = Item.objects.get(pk=id)
+                item.amount += 1
+                item.save()
+            return HttpResponseRedirect(reverse('main:show_main'))
+        ```
+    * Buat fungsi `sub_items` untuk mengurangkan *item* yang ada dengan kode seperti berikut.
+        ```python
+        def sub_items(request, id):
+            if request.method == "POST":
+                item = Item.objects.get(pk=id)
+                if item.amount > 0:
+                    item.amount -= 1
+                    item.save()
+                else:
+                    item.delete()
+            return HttpResponseRedirect(reverse('main:show_main'))
+        ```
+    * Buat fungsi `remove_items` untuk menghapus *item* yang ada dengan kode seperti berikut.
+        ```python
+        def remove_items(request, id):
+            if request.method == "POST":
+                item = Item.objects.get(pk=id)
+                item.delete()
+            return HttpResponseRedirect(reverse('main:show_main'))
+        ```
+
+2. Setelah itu buka `urls.py` yang ada pada direktori `main`.
+    * Tambahkan *import* dari fungsi yang sudah dibuat sebelumnya.
+        ```python
+        from main.views import add_items, sub_items, remove_items
+        ```
+    * Tambahkan *path url* di dalam `urlpatterns` untuk mengakses fungsi tersebut.
+        ```python
+        ...
+        path('add_items/<int:id>/', add_items, name='add_items'),
+        path('sub_items/<int:id>/', sub_items, name='sub_items'),
+        path('remove_items/<int:id>/', remove_items, name='remove_items'),
+        ...
+        ```
+
+3. Lalu buka `main.html` yang ada di direktori `main/templates` dan tambahkan kode berikut di dalam tabel *item* untuk menampilkan button dari fungsi `add_items`, `sub_items`, dan `remove_items`.
+    ```html
+    ...
+    <td>
+        <form method="POST" action="{% url 'main:add_items' item.id %}">
+            {% csrf_token %}
+            <button type="submit">Add</button>
+        </form>
+    </td>
+    <td>
+        <form method="POST" action="{% url 'main:sub_items' item.id %}">
+            {% csrf_token %}
+            <button type="submit">Decrease</button>
+        </form>
+    </td>
+    <td>
+        <form method="POST" action="{% url 'main:remove_items' item.id %}">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+        </form>
+    </td>
+    ...
+    ```
