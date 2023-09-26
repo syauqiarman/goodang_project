@@ -87,3 +87,26 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('main:login'))
     response.delete_cookie('last_login')
     return response
+
+def add_items(request, id):
+    if request.method == "POST":
+        item = Item.objects.get(pk=id)
+        item.amount += 1
+        item.save()
+    return HttpResponseRedirect(reverse('main:show_main'))
+
+def sub_items(request, id):
+    if request.method == "POST":
+        item = Item.objects.get(pk=id)
+        if item.amount > 0:
+            item.amount -= 1
+            item.save()
+        else:
+            item.delete()
+    return HttpResponseRedirect(reverse('main:show_main'))
+
+def remove_items(request, id):
+    if request.method == "POST":
+        item = Item.objects.get(pk=id)
+        item.delete()
+    return HttpResponseRedirect(reverse('main:show_main'))

@@ -32,6 +32,24 @@
                 <td>{{item.price}}</td>
                 <td>{{item.description}}</td>
                 <td>{{item.date_added}}</td>
+                <td>
+                    <form method="POST" action="{% url 'main:add_items' item.id %}">
+                        {% csrf_token %}
+                        <button type="submit">Add</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="{% url 'main:sub_items' item.id %}">
+                        {% csrf_token %}
+                        <button type="submit">Decrease</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="{% url 'main:remove_items' item.id %}">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
             </tr>
         {% endfor %}
     </table>
