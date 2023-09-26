@@ -1,9 +1,10 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Item(models.Model):
-    owner = models.CharField(default='',max_length=255)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.CharField(max_length=255)
     item_name = models.CharField(max_length=255)
     category = models.CharField(max_length=255)
     amount = models.IntegerField()
