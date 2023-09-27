@@ -992,6 +992,13 @@ Dalam penggunaan *cookies*, penting untuk berhati-hati dan bijaksana dalam menge
 5. Tekan tombol `Add New Item` untuk menambahkan data (buatlah 3 data).
 6. Ulangi langkah yang sama untuk akun kedua dan seterusnya.
 
+**user01**
+![image](https://github.com/syauqiarman/goodang_project/assets/113775175/b6402d7a-274e-4adf-9a5b-b516b2b9d5bc)
+
+**user02**
+![image](https://github.com/syauqiarman/goodang_project/assets/113775175/52ad6b6e-d639-410e-86ec-9b9f5dbde302)
+
+
 ## **Menghubungkan model `Item` dengan `User`**
 
 1. Buka `models.py` di direktori `main`.
