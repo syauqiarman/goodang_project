@@ -767,8 +767,6 @@ Untuk mengurangi risiko-risiko ini, praktik keamanan yang disarankan meliputi va
 
 Dalam penggunaan *cookies*, penting untuk berhati-hati dan bijaksana dalam mengelola data sensitif dan privasi pengguna.
 
-## **Implementasi Autentikasi, *Session*, dan *Cookies* pada Django**
-
 ## **Membuat *Form* Registrasi, Fungsi Login, dan Fungsi Logout**
 
 1. Aktifkan *virtual environment* dengan cara `env\Scripts\activate.bat` untuk Windows dan `source env/bin/activate` untuk Unix (Mac/Linux).
