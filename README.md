@@ -1152,3 +1152,507 @@ Dalam penggunaan *cookies*, penting untuk berhati-hati dan bijaksana dalam menge
     </td>
     ...
     ```
+<br/>
+<br/>
+
+# **Tugas 5 - Desain Web menggunakan HTML, CSS dan Framework CSS**
+
+1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+2. Jelaskan HTML5 Tag yang kamu ketahui.
+3. Jelaskan perbedaan antara margin dan padding.
+4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas 6.secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+## **Manfaat dari Setiap Element Selector dan Waktu yang Tepat untuk Menggunakannya**
+
+Selector dalam CSS adalah cara untuk memilih elemen HTML yang akan diberi gaya atau tampilan tertentu. Ada beberapa jenis selector, di antaranya adalah Element Selector, ID Selector, dan Class Selector. Berikut adalah manfaat dari ketiga jenis selector ini beserta kapan waktu yang tepat untuk menggunakannya:
+
+1. **Element Selector**
+    * Manfaat: Selector elemen memungkinkan Anda untuk menerapkan gaya ke semua elemen HTML dengan jenis yang sama. Misalnya, Anda dapat menggunakan p selector untuk mengganti gaya semua elemen `<p>` pada halaman web Anda.
+    * Kapan Menggunakannya: Anda harus menggunakan selector elemen ketika ingin menerapkan gaya umum ke semua elemen dengan jenis yang sama pada halaman web Anda. Ini cocok untuk gaya dasar seperti mengubah ukuran font atau warna teks pada semua elemen dengan jenis tertentu.
+
+2. **ID Selector**
+    * Manfaat: ID selector memungkinkan Anda untuk memilih elemen HTML yang memiliki atribut id unik dan menerapkan gaya atau fungsi khusus ke elemen tersebut. ID selector memiliki keutamaan yang tinggi dalam hierarki CSS.
+    * Kapan Menggunakannya: Anda sebaiknya menggunakan ID selector ketika Anda ingin memberikan gaya atau perilaku yang unik untuk elemen tertentu yang hanya muncul satu kali dalam dokumen HTML. Contohnya, jika Anda memiliki satu elemen dengan id="header", Anda dapat menggunakan #header untuk mengatur gaya header halaman web Anda.
+
+3. **Class Selector**
+    *  Manfaat: Class selector memungkinkan Anda untuk memilih elemen HTML yang memiliki atribut class tertentu dan menerapkan gaya atau fungsi yang sama ke sekelompok elemen yang memiliki class yang sama. Anda dapat menggunakan class selector berkali-kali dalam satu halaman.
+    * Kapan Menggunakannya: Class selector sangat berguna ketika Anda ingin menerapkan gaya atau perilaku yang sama pada sekelompok elemen yang tidak harus unik, seperti semua tombol di situs web Anda. Anda juga dapat menggunakan lebih dari satu class pada elemen yang sama, yang memungkinkan kombinasi gaya yang lebih kompleks.
+
+Penting untuk memilih jenis selector yang tepat sesuai dengan kebutuhan desain dan struktur halaman web Anda. Element selector cocok untuk elemen umum dengan jenis yang sama, ID selector cocok untuk elemen dengan id unik, dan class selector cocok untuk kelompok elemen dengan class yang sama. Kombinasi dari ketiga jenis ini dapat digunakan untuk menghasilkan tampilan web yang lebih kaya dan dinamis.
+
+## **HTML5 Tag**
+HTML5 (Hypertext Markup Language 5) adalah versi terbaru dari bahasa markup yang digunakan untuk membangun halaman web. Dalam HTML5, terdapat berbagai tag atau elemen yang digunakan untuk membuat struktur, konten, dan fungsionalitas halaman web. Berikut adalah beberapa tag HTML5 yang umum digunakan:
+
+1. `<!DOCTYPE html>`: Ini bukan tag dalam arti tradisional, tetapi ini adalah deklarasi dokumen yang menunjukkan bahwa halaman web menggunakan standar HTML5.
+
+2. `<html>`: Tag ini menandakan awal dan akhir dari dokumen HTML dan berisi semua elemen HTML.
+
+3. `<head>`: Ini adalah wadah untuk informasi meta seperti judul halaman, metadata, dan hubungan dengan berkas eksternal seperti CSS dan JavaScript.
+
+4. `<meta>`: Tag ini digunakan untuk menyertakan metadata dalam halaman, seperti karakter set yang digunakan, deskripsi halaman, dan instruksi indeks mesin pencari.
+
+5. `<title>`: Tag ini digunakan untuk menentukan judul halaman web yang akan ditampilkan di bilah judul browser.
+
+6. `<link>`: Ini digunakan untuk menghubungkan halaman HTML dengan berkas eksternal, seperti stylesheet CSS.
+
+7. `<style>`: Tag ini digunakan untuk menentukan gaya CSS langsung di dalam dokumen HTML.
+
+8. `<script>`: Ini digunakan untuk menyisipkan JavaScript dalam halaman web.
+
+9. `<body>`: Ini adalah tempat konten sebenarnya dari halaman web, seperti teks, gambar, dan elemen-elemen lainnya.
+
+10. `<header>`: Ini digunakan untuk mengelompokkan elemen-elemen yang berada di bagian atas halaman, seperti judul, logo, dan navigasi.
+
+11. `<nav>`: Tag ini digunakan untuk mengelompokkan elemen-elemen yang berisi navigasi, seperti menu utama.
+
+12. `<main>`: Ini adalah tempat untuk konten utama dari halaman web, seperti artikel atau konten utama lainnya.
+
+13. `<article>`: Tag ini digunakan untuk mengelompokkan konten yang mandiri dan dapat berdiri sendiri, seperti postingan blog atau artikel berita.
+
+14. `<section>`: Ini digunakan untuk mengelompokkan konten yang berkaitan secara semantik, seperti bagian dari artikel atau bagian dari halaman web.
+
+15. `<aside>`: Ini digunakan untuk mengelompokkan konten yang terkait tetapi tidak terlalu relevan dengan konten utama, seperti sidebar.
+
+16. `<footer>`: Ini digunakan untuk mengelompokkan elemen-elemen yang berada di bagian bawah halaman, seperti informasi kontak atau hak cipta.
+
+17. `<figure>` dan `<figcaption>`: Digunakan untuk menyertakan gambar atau media lainnya bersama dengan keterangan.
+
+18. `<video>` dan `<audio>`: Digunakan untuk menyisipkan konten video dan audio.
+
+19. `<canvas>`: Ini digunakan untuk membuat gambar, grafik, dan animasi dengan menggunakan JavaScript.
+
+20. `<form>`: Ini digunakan untuk membuat formulir yang memungkinkan pengguna untuk mengirimkan data.
+
+21. `<input>`: Digunakan dalam formulir untuk membuat berbagai jenis input, seperti teks, sandi, checkbox, dan banyak lagi.
+
+22. `<button>`: Digunakan untuk membuat tombol pada halaman web.
+
+23. `<a>`: Digunakan untuk membuat tautan atau hyperlink.
+
+24. `<iframe>`: Digunakan untuk menyisipkan dokumen HTML lain dalam halaman web.
+
+25. `<svg>`: Digunakan untuk membuat grafik vektor dan animasi.
+
+26. `<progress>`: Digunakan untuk menunjukkan kemajuan atau status.
+
+27. `<details>` dan `<summary>`: Digunakan untuk membuat elemen yang dapat dibuka dan ditutup untuk mengungkap atau menyembunyikan konten tambahan.
+
+Ini adalah beberapa contoh tag HTML5 yang umum digunakan dalam pembuatan halaman web modern. Setiap tag memiliki peran dan fungsinya sendiri dalam membangun struktur dan konten halaman web yang efektif dan interaktif.
+
+## **Perbedaan Antara Margin dan Padding**
+Margin dan padding adalah dua properti penting dalam CSS yang digunakan untuk mengatur ruang di sekitar elemen HTML. Meskipun keduanya berfungsi untuk mengendalikan tata letak elemen dan ruang di antara elemen, mereka memiliki perbedaan utama dalam cara mereka memengaruhi tata letak elemen dan bagaimana ruang tersebut dihitung. Berikut adalah perbedaan antara margin dan padding:
+
+1. **Margin:**
+    * Peran: Margin adalah ruang di luar batas elemen, yaitu ruang antara elemen dan elemen-elemen lain di sekitarnya. Margin digunakan untuk mengontrol jarak antara elemen dengan elemen lain di sekitarnya atau dengan tepi kontainer induk.
+    * Mempengaruhi Elemen Lain: Margin elemen dapat memengaruhi elemen-elemen lain di sekitarnya, yaitu bisa membuat elemen tersebut menjauh atau mendekat dari elemen-elemen lain.
+    * Tidak Memengaruhi Harga Konten: Margin tidak memengaruhi konten dalam elemen. Misalnya, jika Anda memberikan margin pada sebuah paragraf, itu tidak akan memengaruhi jarak antara teks dalam paragraf dengan padding paragraf tersebut.
+    * Margin Bersifat Transparan: Jika ada dua elemen dengan margin yang saling berdekatan, maka margin mereka tidak akan digabungkan (kecuali menggunakan teknik tertentu seperti margin collapsing), tetapi akan tetap terpisah.
+
+2. **Padding:**
+    * Peran: Padding adalah ruang di dalam batas elemen, yaitu ruang antara batas elemen dan kontennya sendiri. Padding digunakan untuk mengendalikan jarak antara konten elemen dan batasnya.
+    * Tidak Mempengaruhi Elemen Lain: Padding hanya memengaruhi elemen yang memiliki padding tersebut dan tidak memengaruhi elemen-elemen lain di sekitarnya.
+    * Mempengaruhi Harga Konten: Padding akan memengaruhi ruang di sekitar konten elemen. Misalnya, jika Anda memberikan padding pada sebuah elemen div, maka jarak antara teks dan batas elemen tersebut akan berubah sesuai dengan padding yang Anda tetapkan.
+    * Padding Bersifat Transparan: Padding dari elemen anak akan memengaruhi posisi elemen tersebut dalam elemen induknya, tetapi tidak akan memengaruhi elemen-elemen lain di sekitarnya.
+
+Singkatnya, margin mengatur ruang di luar elemen, memengaruhi elemen-elemen lain di sekitarnya, dan tidak memengaruhi konten elemen itu sendiri. Sementara itu, padding mengatur ruang di dalam elemen, memengaruhi ruang antara konten dan batas elemen, dan tidak memengaruhi elemen-elemen lain di sekitarnya. Kedua properti ini adalah bagian penting dari desain tata letak dan tampilan dalam CSS.
+
+## **Perbedaan antara Framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?**
+
+1. Pengertian:
+    * Tailwind CSS: Tailwind CSS adalah framework CSS yang sangat modular dan memberikan kontrol tinggi kepada pengembang. Anda membangun tampilan dengan menggabungkan kelas-kelas ke dalam elemen HTML untuk mengatur tampilan dan perilaku elemen tersebut.
+    * Bootstrap: Bootstrap adalah framework CSS yang lebih mendekati pendekatan konvensional karena menyediakan komponen-komponen siap pakai yang dapat Anda gunakan dengan mudah, tanpa perlu menulis banyak kode kustom.
+
+2. Ukuran File:
+    * Tailwind CSS: Karena Anda hanya menggunakan apa yang Anda butuhkan, ukuran file CSS yang dihasilkan cenderung lebih kecil daripada Bootstrap.
+    * Bootstrap: Bootstrap memiliki lebih banyak kode CSS karena menyertakan berbagai fitur dan komponen siap pakai, yang membuatnya cenderung lebih besar.
+
+3. Customization:
+    * Tailwind CSS: Tailwind memungkinkan Anda untuk sangat kustomisasi. Anda dapat merancang tampilan yang sangat unik dengan menggabungkan kelas-kelas yang telah ada atau membuat kelas-kelas kustom.
+    * Bootstrap: Bootstrap juga dapat disesuaikan, tetapi terkadang lebih sulit untuk mengaturnya sesuai dengan desain yang sangat berbeda.
+
+4. Fleksibilitas:
+    * Tailwind CSS:Tailwind CSS membuat Proyek memiliki fleksibilitas dan adaptabilitas tinggi.
+    * Bootstrap: Bootstrap sering kali menghasilkan tampilan yang lebih konsisten di seluruh proyek karena menggunakan komponen yang telah didefinisikan.
+
+5. Pemahaman:
+    * Tailwind CSS membutuhkan pemahaman yang lebih dalam karena memerlukan pemahaman lagi terhadap kelas-kelas utilitas yang tersedia dan bagaimana menggabungkannya untuk mencapai tampilan yang diinginkan.
+    * Bootstrap memiliki dapat dipahami lebih cepat karena komponen-komponennya telah didefinisikan.
+
+**Kapan Menggunakan Bootstrap:**
+
+* Jika Anda membutuhkan tampilan halaman web yang cepat dengan sedikit usaha kustomisasi.
+* Jika Anda tidak memiliki banyak pengalaman dalam desain atau CSS, Bootstrap menyediakan panduan dan komponen yang mudah digunakan.
+* Jika Anda perlu mengembangkan proyek dengan cepat dan memiliki batasan waktu yang ketat.
+* Jika Anda menginginkan tampilan yang sudah siap pakai yang terlihat cukup konsisten di berbagai perangkat.
+
+**Kapan Menggunakan Tailwind CSS:**
+
+* Jika Anda ingin memiliki kontrol yang sangat tinggi atas desain halaman web Anda.
+* Jika Anda bekerja pada proyek dengan desain yang sangat unik atau berbeda.
+* Jika Anda ingin menghindari overhead dari komponen-komponen Bootstrap yang mungkin tidak Anda butuhkan.
+* Jika Anda memiliki keterampilan CSS yang kuat dan ingin merancang tampilan yang sangat kustom.
+
+## **Desain Web Menggunakan HTML dan CSS3 & Metode Update pada Data**
+
+### **Menambahkan bootstrap ke aplikasi**
+
+1. Buka `templates/base.html` tambahkan kode berikut.
+    ```html
+    <head>
+        ...
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+J4jsl5c9zdLKaUk5Ae5f5b1bw6AUn5f5v8FZJoMxm6f5cH1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    </head>
+    ```
+
+### **Menambahkan Fitur Edit pada Aplikasi**
+1. buka `views.py` di direktori `main`, buat fungsi baru `edit_item` tambahkan kode seperti berikut.
+    ```python
+    def edit_item(request, id):
+        # Get product berdasarkan ID
+        item = Item.objects.get(pk = id)
+
+        # Set product sebagai instance dari form
+        form = ItemForm(request.POST or None, instance=item)
+
+        if form.is_valid() and request.method == "POST":
+            # Simpan form dan kembali ke halaman awal
+            form.save()
+            return HttpResponseRedirect(reverse('main:show_main'))
+
+        context = {'form': form}
+        return render(request, "edit_item.html", context)
+    ```
+
+2. Buat HTML baru dengan nama `edit_item.html` pada direktori `main/templates` dan isi kode berikut.
+    ```html
+        {% extends 'base.html' %}
+
+        {% load static %}
+
+        {% block content %}
+
+        <h1>Edit Product</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Edit Product"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        {% endblock %}
+    ```
+
+3. Buka `urls.py` di direktori `main` lalu import fungsi yang sudah dibuat.
+    ```python
+    from main.views import edit_item
+    ```
+
+4. Tambahkan *path* url ke `urlpatterns` agar fungsi bisa diakses.
+    ```python
+    ...
+    path('edit-item/<int:id>', edit_item, name='edit_item'),
+    ...
+    ```
+
+5. Buka `main.html` di direktori `main/templates` lalu tambahkan kode berikut agar tombol edit bisa dilihat.
+    ```html
+    ...
+    <tr>
+        ...
+        <td>
+            <a href="{% url 'main:edit_product' product.pk %}">
+                <button>
+                    Edit
+                </button>
+            </a>
+        </td>
+    </tr>
+    ...
+    ```
+
+### **Memodifikasi Tampilan**
+
+Pada dasarnya kita hanya membuat tampilan web agar lebih menarik menggunakan CSS *framework*, seperti berikut.
+
+1. Untuk halaman `login.html` (metode eksternal)
+    * Buat folder `main/static` dan didalamnya buat file `login.css` isi kode berikut.
+        ```css
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('loginbg.jpg') no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .wrapper{
+            width: 420px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 50px rgba(0, 0, 0, .2);
+            color: white;
+            border-radius: 15px;
+            padding: 30px 40px;
+        }
+
+        .wrapper h1{
+            font-size: 36px;
+            text-align: center;
+        }
+
+        .wrapper .input-box{
+            position: relative;
+            width: 100%;
+            height: 50px;
+            margin: 30px 0;
+        }
+
+        .input-box input{
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            border: 2px solid rgba(255, 255, 255, .2);
+            border-radius: 40px;
+            font-size: 16px;
+            color: white;
+            padding: 20px 45px 20px 20px;
+        }
+
+        .input-box input::placeholder{
+            color: white;
+        }
+
+        .input-box i{
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+        }
+
+        .wrapper .btn{
+            width: 100%;
+            height: 45px;
+            background: white;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, .1);
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .wrapper .register-link{
+            font-size: 14.5px;
+            text-align: center;
+            margin: 20px 0 15px;
+        }
+
+        .register-link p a{
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-link p a:hover{
+            text-decoration: underline;
+        }
+
+        @media only screen and (max-width:600px){
+            form{
+                width:100% !important;
+            }
+        }
+        ```
+
+    * Jangan lupa ubah juga `login.html` nya seperti berikut.
+        ```html
+        <!doctype html>
+        <html lang="en">
+        {% load static %}
+        <head>
+            <!-- Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <!-- Bootstrap CSS -->
+            <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+            <link  rel="stylesheet" href="{% static 'login.css' %}">
+            <title>Login</title>
+        </head>
+        <body>
+            <div class="wrapper">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <h1>Login</h1>
+                    <div class="input-box">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <i class='bx bx-user'></i>
+                    </div>
+                    <div class="input-box">
+                    <input type="password" name="password" placeholder="Password" id="inputPassword" required>
+                    <i class='bx bx-lock-alt' ></i>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    
+                    <div class="register-link">
+                        <p>Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Optional JavaScript; choose one of the two! -->
+
+            <!-- Option 1: Bootstrap Bundle with Popper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        </body>
+        </html>
+        ```
+    
+2. Untuk halaman `register.html` juga menggunakan (metode eksternal) seperti login dan implementasinya serupa.
+
+3. Untuk halaman `main.html` (metode internal)
+    * Ubah kode didalam `main.html` seperti berikut.
+        ```html
+        {% extends 'base.html' %}
+        {% load static %}
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link  rel="stylesheet" href="{% static 'register.css' %}">
+
+        {% block content %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <!-- Logo di sebelah kiri -->
+                <a class="navbar-brand" href="#">
+                    <img src="{% static 'weblogo.png' %}" width="50" height="50" class="d-inline-block align-top" alt="Logo">
+                    Goodang
+                </a>
+
+                <!-- Tombol Logout di sebelah kanan -->
+                <a href="{% url 'main:logout' %}">
+                    <button class="btn btn-outline-success me-2" type="button">Logout</button>  
+                </a>
+                
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <h1>Goodang Page</h1>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Name:</h5>
+                    <p>{{ name }}</p>
+
+                    <h5>Class:</h5>
+                    <p>{{ class }}</p>
+
+                    <div class="item-count">
+                        <p>Total of Items: {{ items|length }}</p>
+                    </div>
+                    <a href="{% url 'main:create_item' %}" class="btn btn-primary">Add New Item</a>
+                </div>
+            </div>
+
+            <table class="table table-hover mt-3">
+                <thead>
+                    <tr>
+                        <th scope="col">Owner</th>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Date Added</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                        <tr>
+                            <td>{{ item.owner }}</td>
+                            <td>{{ item.item_name }}</td>
+                            <td>{{ item.category }}</td>
+                            <td>{{ item.amount }}</td>
+                            <td>{{ item.price }}</td>
+                            <td>{{ item.description }}</td>
+                            <td>{{ item.date_added }}</td>
+                            <td>
+                                <form method="POST" action="{% url 'main:add_items' item.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-primary btn-sm">Add</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form method="POST" action="{% url 'main:sub_items' item.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-primary btn-sm">Dec</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form method="POST" action="{% url 'main:remove_items' item.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </td>
+                            <td>
+                                <a href="{% url 'main:edit_item' item.pk %}" class="btn btn-secondary btn-sm">Edit</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <h5 class="mt-3" style="font-size: 14px;">Sesi terakhir login: {{ last_login }}</h5>
+
+        </div>
+        {% endblock content %}
+
+        ```
+
+4. Untuk halaman `create_item.html` dan `edit_item` juga menggunakan (metode internal) dengan bootstrap seperti `main.html` dan implementasinya serupa.
+
+### **BONUS Menandakan Item Terakhir yang Ditambah**
+Pada file `main.html` di direktori `main` tambahkan kode berikut.
+```html
+...
+<tr {% if forloop.last %} class="table-warning"{% endif %}>
+                    <td>{{ item.owner }}</td>
+                    <td>{{ item.item_name }}</td>
+                    <td>{{ item.category }}</td>
+                    <td>{{ item.amount }}</td>
+                    <td>{{ item.price }}</td>
+                    <td>{{ item.description }}</td>
+                    <td>{{ item.date_added }}</td>
+                    <td>
+...
+```
