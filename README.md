@@ -1656,3 +1656,247 @@ Pada file `main.html` di direktori `main` tambahkan kode berikut.
                     <td>
 ...
 ```
+
+# **Tugas 6 - Desain Web menggunakan HTML, CSS dan Framework CSS**
+
+1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+3. Jelaskan penerapan asynchronous programming pada AJAX.
+4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+## **Perbedaan antara Asynchronous Programming dengan Synchronous Programming**
+
+* Synchronous Programming:
+    1. Eksekusi tugas atau operasi dilakukan secara berurutan, satu per satu.
+    2. Program akan menunggu tugas saat ini selesai sebelum melanjutkan ke tugas berikutnya.
+    3. Cocok untuk tugas yang bersifat sederhana dan berurutan, seperti  tugas-tugas sederhana yang tidak memerlukan banyak interaksi dengan jaringan atau operasi I/O yang lama.
+    4. Biasa diilustrasikan dengan "*blocking*", karena jika suatu tugas memakan waktu lama untuk menyelesaikan, program akan terhenti dan tidak dapat melakukan tugas lain selama waktu tersebut.
+
+* Asynchronous Programming:
+    1. Tugas atau operasi dapat dimulai tanpa harus menunggu tugas sebelumnya selesai.
+    2. Program dapat menjalankan beberapa tugas secara bersamaan atau mengatasi tugas yang memerlukan waktu lama tanpa menghentikan yang lain.
+    3. Cocok untuk tugas yang melibatkan I/O (Input/Output) seperti membaca file, mengambil data dari internet, atau berkomunikasi dengan database.
+
+## **Pengertian dan Penerapan Paradigma *Event-Driven Programming***
+Paradigma event-driven programming adalah paradigma pemrograman dimana program berinteraksi dengan berbagai peristiwa (events) yang terjadi dalam sistem atau lingkungan eksekusi. Dalam konteks JavaScript dan AJAX, paradigma ini sering digunakan untuk mengatasi tindakan pengguna dan interaksi dengan elemen-elemen pada halaman web. Maksud dari paradigma ini yakni program Anda dapat merespons peristiwa atau tindakan secara asynchronous, tanpa harus secara aktif menunggu tindakan tersebut selesai.
+Contohnya:
+
+## **Penerapan Asynchronous Programming pada AJAX**
+Penerapan asynchronous programming pada AJAX (Asynchronous JavaScript and XML) merupakan  salah satu fitur kunci yang membuat AJAX sangat berguna dalam pengembangan aplikasi web, karena memungkinkan pengiriman request dan penerimaan response dari server web yang dapat terjadi tanpa harus menghentikan eksekusi kode JavaScript lainnya. Berikut adalah penjelasan lebih lanjut:
+1. Permintaan Asynchronous (Asynchronous Requests):
+    * Dalam AJAX, bisa membuat permintaan HTTP ke server web (misalnya, GET atau POST request) tanpa harus menunggu respons server, sehingga kode lainnya dapat dijalankan selama permintaan AJAX sedang berlangsung, sehingga halaman web tetap responsif bagi pengguna.
+
+2. Callback Functions (Fungsi Callback):
+    Dalam asynchronous programming di AJAX, dapat menyediakan fungsi callback yang akan dijalankan ketika respons dari server diterima, yang memungkinkan untuk mengambil tindakan tertentu berdasarkan hasil respons, seperti memperbarui tampilan halaman web atau memproses data yang diterima.
+
+3. Handling Multiple Requests (Menangani Permintaan Bersamaan):
+    Dalam AJAX, Anda dapat mengirim beberapa permintaan asynchronous secara bersamaan, dan kemudian mengelola responsnya sesuai urutan tiba. Misalnya, bisa mengambil data dari beberapa sumber atau melakukan beberapa tugas secara simultan dalam halaman web Anda.
+
+4. Menghindari Penguncian (Avoiding Blocking):
+    Asynchronous programming dalam AJAX menghindari penguncian (blocking) di browser sehingga pengguna tetap dapat berinteraksi dengan halaman web meskipun permintaan AJAX sedang berlangsung.
+
+5. Timeouts dan Kesalahan (Timeouts and Errors):
+    Waktu maksimum (timeout) dapat diatur untuk menunggu respons dari server. Jika waktu maksimum terlampaui, Anda dapat mengatasi kesalahan dengan baik. Pada saat respons mengandung kesalahan, Anda dapat mengelola kesalahan tersebut melalui callback error.
+
+
+## **Perbandingan Penerapan AJAX dengan Menggunakan Fetch API dengan Library jQuery**
+Penerapan AJAX dapat dilakukan dengan menggunakan Fetch API (dalam JavaScript murni) atau dengan bantuan library seperti jQuery. Pilihan antara keduanya tergantung pada kebutuhan dan preferensi pengembang. Berikut perbandingan antara Fetch API dan jQuery dalam konteks penerapan AJAX:
+
+1. Fetch API:
+    * Native JavaScript: Fetch API adalah bagian dari JavaScript standar, jadi tidak perlu mengimpor atau memuat library eksternal, sehingga halaman web Anda lebih ringan karena hanya menggunakan sumber daya bawaan.
+    * Promise-based: Fetch API menggunakan promise untuk mengelola permintaan dan respons, yang membuatnya lebih mudah untuk mengatasi permintaan berantai dan menghindari callback hell (penggunaan berulang dari callback).
+    * Fleksibilitas: Anda memiliki lebih banyak fleksibilitas dan kendali atas permintaan HTTP, seperti mengatur header atau mengelola respons dalam format yang berbeda (JSON, teks, XML, dll.).
+    * Learning Curve: Fetch API memerlukan pemahaman tentang promise dan lebih banyak penanganan manual dalam beberapa kasus.
+
+2. jQuery:
+    * Simplicity: jQuery menyederhanakan penggunaan AJAX dengan method seperti $.ajax() dan $.get(), sehingga mengurangi jumlah kode yang perlu Anda tulis.
+    * Cross-browser Compatibility: jQuery dirancang untuk menangani perbedaan implementasi browser, sehingga dapat membantu mengatasi masalah kompatibilitas.
+    * Larger Community: jQuery adalah library yang sangat populer dengan komunitas yang besar, sehingga Anda dapat menemukan banyak dokumentasi, tutorial, dan plugin yang siap digunakan.
+    * Synchronous Requests: jQuery memungkinkan Anda untuk melakukan permintaan synchronous (yang terkadang tidak disarankan karena dapat menghentikan eksekusi kode).
+
+Pilihan antara Fetch API dan jQuery tergantung pada kebutuhan proyek dan preferensi Anda sebagai pengembang. Jika Anda mencari solusi yang lebih ringan dan modern dengan kontrol yang lebih besar atas permintaan dan respons, maka Fetch API adalah pilihan yang baik. Namun, jika Anda ingin kemudahan penggunaan dan kompatibilitas cross-browser yang baik, serta tidak keberatan dengan ukuran tambahan di halaman web Anda, jQuery bisa menjadi solusi yang cocok, dan lebih berat.
+
+## **Implementasi Pengembalian Data , Menambah Item, dan Menghapus Item(BONUS)**
+* Membuat fungsi `get_item_json` , `add_item_ajax`, dan `delete_item_ajax`(BONUS) di `views.py` pada direktori `main`.
+    1. Tambahkan kode berikut untuk membuat fungsi `get_item_json`.
+        ```python
+        def get_item_json(request):
+            items = Item.objects.filter(user=request.user)
+            return HttpResponse(serializers.serialize('json', items))
+        ```
+    2. Tambahkan kode berikut untuk membuat fungsi `add_item_ajax`. Jangan lupa untuk mengimpor `from django.views.decorators.csrf import csrf_exempt`, dan `from django.http import HttpResponseNotFound` pada bagian atas.
+        ```python
+        @csrf_exempt
+        def add_item_ajax(request):
+            if request.method == 'POST':
+                owner = request.POST.get("owner")
+                item_name = request.POST.get("item_name")
+                category = request.POST.get("category")
+                amount = request.POST.get("amount")
+                price = request.POST.get("price")
+                description = request.POST.get("description")
+                user = request.user
+
+                new_item = Item(owner=owner, item_name=item_name, category=category, amount=amount, price=price, description=description, user=user)
+                new_item.save()
+
+                return HttpResponse(b"CREATED", status=201)
+
+            return HttpResponseNotFound()
+        ```
+    3. Tambahkan kode berikut untuk membuat fungsi `delete_item_ajax`(BONUS).
+        ```python
+        @csrf_exempt
+        def delete_item_ajax(request):
+            if request.method == 'POST':
+                item_id = request.GET.get('item_id')
+                item = Item.objects.get(pk=item_id)
+                item.delete()
+                return HttpResponse(status=204)
+            return HttpResponseNotFound()
+        ```
+
+* Menambahkan Routing Untuk Fungsi `get_item_json`, `add_item_ajax`, dan `delete_item_ajax`(BONUS)
+    1. Buka `urls.py` di direktori `main` lalu impor fungsi `get_item_json`, `add_item_ajax`, dan `delete_item_ajax`(BONUS)
+    2. Tambahkan *path url* fungsi tersebut ke dalam `urlspatterns`.
+        ```python
+        ...
+        path('get-item/', get_item_json, name='get_item_json'),
+        path('create-item-ajax/', add_item_ajax, name='add_item_ajax'),
+        path('delete-item-ajax/', delete_item_ajax name='delete_item_ajax'),
+        ```
+
+* Menampilkan Data Item dengan Fetch() API.
+    1. Buka `main.html` pada `main/templates`, hapus bagian tabel sebelumnya.
+    2. Ganti dengan kode berikut.
+        ```html
+        <div class="row" id="item_cards"></div>
+        ```
+    3. Buat blok `<Script>`di bagian bawah, lalu buat fungsi baru dengan nama `getItems()` dan `refreshItems()`.
+        ```
+        async function getItems() {
+            return fetch("{% url 'main:get_item_json' %}").then((res) => res.json())
+        }
+        async function refreshItems() {
+            document.getElementById("item_cards").innerHTML = ""
+            const items = await getItems()
+            htmlString = ""
+            items.forEach((item) => {
+                htmlString += `
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title custom-title">${item.fields.item_name}</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary custom-subtitle">${item.fields.owner}</h6>
+                            <p class="card-text custom-text">Category: ${item.fields.category}</p>
+                            <p class="card-text custom-text">Amount: ${item.fields.amount}</p>
+                            <p class="card-text custom-text">Price: ${item.fields.price}</p>
+                            <p class="card-text custom-text">Description: ${item.fields.description}</p>
+                            <button class="btn btn-primary btn-sm" onclick="addAmountItem(${item.pk})">Add</button>
+                            <button class="btn btn-warning btn-sm" onclick="subAmountItem(${item.pk})">Dec</button>
+                            <button class="btn btn-secondary btn-sm" onclick="editItem(${item.pk})">Edit</button>
+                            <button class="btn btn-danger btn-sm" onclick="deleteItem(${item.pk})">Delete</button>
+                        </div>
+                    </div>
+                </div>
+                `;
+
+                document.getElementById("item_cards").innerHTML = htmlString
+            });       
+        }
+
+        refreshItems()
+        ```
+
+* Membuat Form untuk Menambahkan Item
+    1. Tambahkan kode berikut sebagai isi dari form yang sudah mengimplementasi bootstrap.
+        ```html
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Item</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="resetForm()"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form" onsubmit="return false;">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="owner" class="col-form-label">Owner:</label>
+                                <input type="text" class="form-control" id="owner" name="owner"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="item_name" class="col-form-label">Item Name:</label>
+                                <input type="text" class="form-control" id="item_name" name="item_name"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="category" class="col-form-label">Category:</label>
+                                <input type="text" class="form-control" id="category" name="category"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="amount" class="col-form-label">Amount:</label>
+                                <input type="number" class="form-control" id="amount" name="amount"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="price" class="col-form-label">Price:</label>
+                                <input type="number" class="form-control" id="price" name="price"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="col-form-label">Description:</label>
+                                <textarea class="form-control" id="description" name="description"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="resetForm()">Close</button>
+                        <button type="button" class="btn btn-success" id="button_add" data-bs-dismiss="modal">Add Item</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        ```
+    2. Tambahkan button untuk menampilkan form tambah item.
+        ```html
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Item</button>
+        ```
+
+* Menambahkan dan Menghapus(BONUS) Data Item dengan AJAX
+    Buat fungsi baru pada `<Script>` dengan nama `addItem()` dan `deleteItem()` seperti kode berikut.
+        ```
+        function addItem() {
+            fetch("{% url 'main:add_item_ajax' %}", {
+                method: "POST",
+                body: new FormData(document.querySelector('#form'))
+            }).then(refreshItems)
+
+            document.getElementById("form").reset()
+            return false
+        }
+        document.getElementById("button_add").onclick = addItem
+
+        function deleteItem(itemId) {
+            if (confirm("Are you sure you want to delete this item?")) {
+                fetch(`{% url 'main:delete_item_ajax' %}?item_id=${itemId}`, {
+                    method: "POST",
+                })
+                .then(refreshItems)
+            }
+        }
+        ```
+
+* Merefresh form saat tidak jadi submit.
+    1. Tambahkan kode berikut pada bagian `<Script>`.
+        ```
+        function resetForm() {
+            document.getElementById("form").reset();
+        }
+        ```
+    2. Tambahkan `onclick="resetForm()"` pada bagian button Cancel dan Close di bagian form.
+        ```html
+        ...
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="resetForm()"></button>
+        ...
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="resetForm()">Close</button>
+        ...
+        ```
