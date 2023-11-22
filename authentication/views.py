@@ -7,8 +7,6 @@ from django.contrib.auth.models import User
 from django.core import serializers
 from main.models import Item
 
-user = None
-
 @csrf_exempt
 def register(request):
     
@@ -73,7 +71,3 @@ def logout(request):
         "status": False,
         "message": "Logout gagal."
         }, status=401)
-
-def get_item_json(request):
-    item = Item.objects.filter(user = user)
-    return HttpResponse(serializers.serialize('json', item))
