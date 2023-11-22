@@ -4,7 +4,7 @@
 **2206829010**<br/>
 **PBP D**<br/>
 
-Dapat diakses melalui link [Goodang](https://goodang.adaptable.app/main/).
+Dapat diakses melalui link [Goodang](http://syauqi-armanaya-tugas.pbp.cs.ui.ac.id/).
 <br/>
 <br/>
 
